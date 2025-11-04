@@ -5,7 +5,7 @@ def uuid7(shift:int=None,rand_a:int=None,rand_b:int=None)->UUID:
 	rand_a=rand_a if rand_a!=None else getrandbits(12)
 	rand_b=rand_b if rand_b!=None else getrandbits(62)
 	shift=shift if shift!=None else 0
-	result=list((int(time.time()*1000)+shift).to_bytes(6,'big'))
+	result=list((int(time.time()*1000)+shift).to_bytes(6))
 	result.extend((7<<12|(2**12-1&rand_a)).to_bytes(2))
 	result.extend((2<<62|(2**62-1&rand_b)).to_bytes(8))
 	return UUID(bytes=bytes(result))
