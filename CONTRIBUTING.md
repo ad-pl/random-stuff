@@ -1,2 +1,2 @@
 only use whitespace when needed or before and after a #  
-yeah umm thats it goodby e
+make it as compact as possible (except for field and function names)
